@@ -1,0 +1,19 @@
+version: "3.9"
+services:
+  db:
+    container_name: mindfitness-pf-db
+    hostname: mindfitness-pf-db
+    image: postgres:14-alpine
+    restart: unless-stopped
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=mindfitness-pf
+      - POSTGRES_PASSWORD=mindfitness-pf
+      - POSTGRES_DB=mindfitness-pf
+    volumes:
+      - db-data:/var/lib/postgresql/data
+
+volumes:
+  db-data:
+    driver: local

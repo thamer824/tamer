@@ -1,0 +1,31 @@
+{
+  "name": "mindfitness-pf-backend",
+  "version": "0.1.0",
+  "description": "MindFiness Platform - Backend",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon src/server.js",
+    "ctn:up": "docker-compose up -d",
+    "ctn:down": "docker-compose down",
+    "ctn:status": "docker-compose ps",
+    "db:status": "npx sequelize db:migrate:status",
+    "db:migrate": "npx sequelize db:migrate",
+    "db:migrate:undo": "npx sequelize db:migrate:undo",
+    "db:migrate:undo:all": "npx sequelize db:migrate:undo:all",
+    "db:reset": "node src/scripts/reset-db.js"
+  },
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "cors": "^2.8.5",
+    "dotenv-flow": "^3.2.0",
+    "express": "^4.17.3",
+    "express-session": "^1.17.2",
+    "jsonwebtoken": "^8.5.1",
+    "pg": "^8.7.3",
+    "sequelize": "^6.19.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15",
+    "sequelize-cli": "^6.4.1"
+  }
+}
